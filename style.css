@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* PREDEINED STYLING */
+
+h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.desktop-image{
+  width:100%;
+  display: block;
+
+}
+
+.mobile-image{
+  width:100%;
+  display: none;
+}
+
+/* HEADER AND NAVBAR  */
+
+header {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
+    url("./images/desktop/image-hero.jpg");
+  padding: 4rem 8rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 5rem;
+  font-family: "Alata", sans-serif;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.2rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.header-content {
+  color: white;
+  border: 2px solid white;
+  max-width: 40rem;
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+
+.header-title {
+  font-size: 3.9rem;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+}
+
+.hamburger-menu{
+  width:25px;
+  height:25px;
+  cursor: pointer;
+  display: none;
+}
+
+/* ABOUT-SECTION */
+.about-section {
+  padding: 20vh 8rem;
+}
+
+.about-content {
+  display: flex;
+  font-family: "Josefin Sans", sans-serif;
+  position: relative;
+}
+
+.about-content-description {
+  position: absolute;
+  bottom: 0;
+ left:48%;
+ background-color: rgb(255, 255, 255);
+ max-width: 45rem;
+  padding: 4rem 4rem;
+}
+
+.about-heading {
+  margin-bottom: 2rem;
+}
+
+.about-paragraph {
+  font-weight: bold;
+  color: grey;
+  line-height: 1.5rem;
+}
+
+/* GALLERY-SECTION */
+
+.gallery-section {
+    padding-left:8rem;
+    padding-right:8rem;
+    padding-bottom: 8rem;
+  width: 100%;
+  font-family: "Josefin Sans", sans-serif;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  text-transform: uppercase;
+  font-weight: 300;
+  background: transparent;
+  border: 2px solid black;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  font-size: 1.1rem;
+  transition: all 0.6s ease-in-out;
+}
+
+button:hover {
+  color: rgb(255, 255, 255);
+  background-color: black;
+}
+
+.grid {
+  margin-top: 5rem;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  place-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  transition: 4s ease;
+  cursor: pointer;
+}
+
+.card img{
+ width:100%;
+ height:100%;
+ object-fit: cover;
+  }
+  
+
+.card::before {
+  content: " ";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+}
+
+.card:hover::before {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(218, 218, 218, 0.7));
+}
+
+.card-title {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  color: white;
+  font-weight: 300;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  transition: all 0.6s ease-in-out;
+}
+
+.card:hover .card-title {
+  color: black;
+}
+
+
+/* FOOTER */
+footer{
+    padding:2rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Josefin Sans", sans-serif;
+    color:white;
+    background-color: black;
+    align-items: center;
+}
+
+.footer-left,.footer-right{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.icons{
+    display:flex;
+    gap:2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .about-content {
+    display: flex;
+    font-family: "Josefin Sans", sans-serif;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .about-content-description{
+    position: static;
+    width:100%;
+    padding:3rem 0rem;
+  }
+
+  .header{
+    padding:2.2rem
+  }
+    
+}
+
+@media (max-width: 1000px){
+
+.header{
+  padding:2rem
+}
+
+footer{
+  flex-direction: column;
+  gap:2rem;
+
+}
+
+.footer-left,.footer-right{
+
+  gap:2rem
+}
+   
+}
+
+
+@media (max-width: 850px) {
+
+  .gallery-section,.about-section,header,footer {
+    padding:2rem;
+  }
+
+  .header-content {
+ padding:2.9rem;
+  }
+
+ .header-title {
+  font-size: 3.2rem;
+ 
+}
+
+.hamburger-menu{
+display: block;
+z-index: 99999999999999;
+color:white;
+}
+
+nav{
+  position: relative;
+}
+
+nav ul{
+  position: absolute;
+  background-color: black;
+  top:100%;
+  flex-direction: column;
+  width:100%;
+  padding:1rem;
+  gap:1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.7s ease;
+  top: -90%;
+}
+
+.show{
+  pointer-events: fill;
+  opacity: 1;
+  top:100%;
+}
+
+nav li{
+  padding:1rem;
+}
+nav li:hover{
+  padding:1rem;
+  background-color: rgb(26, 26, 26);
+}
+
+.gallery-section{
+  padding-bottom: 10rem;
+
+}
+
+button{
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  
+}
+
+}
+
+@media (max-width: 600px) {
+.desktop-image{
+  display: none;
+}
+
+.mobile-image{
+  display: block;
+}
+
+.grid{
+  grid-template-columns: 1fr;
+}
+
+  .about-content-description{
+  padding:2em 0rem
+}
+
+.header-title {
+  font-size: 2.8rem;
+ 
+}
+
+footer ul{
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+}
+
+@media (max-width: 450px) {
+
+.header-content{
+  padding:1rem;
+
+}
+
+  .header-title {
+    font-size: 2.3rem;
+   
+  }
+  
+  }
